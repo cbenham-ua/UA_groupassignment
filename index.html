@@ -1,34 +1,33 @@
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Redirecting…</title>
+    <title>Find Your Animal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- 1) Set your Apps Script Web App URL here -->
-    <script>
-      const TARGET = "https://script.google.com/macros/s/AKfycbz8tBy7YlFRRMZHqG6HjLNvhxGe7gX7rUpgKE8snCY0mhJZCoKpftqLhqDpjhLGEBllNw/exec";
-      // 2) Immediate redirect via JS (no back button entry)
-      (function () {
-        try {
-          window.location.replace(TARGET);
-        } catch (e) {
-          window.location.href = TARGET;
-        }
-      })();
-    </script>
-    <!-- 3) Fallback meta refresh if JS is blocked -->
-    <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbz8tBy7YlFRRMZHqG6HjLNvhxGe7gX7rUpgKE8snCY0mhJZCoKpftqLhqDpjhLGEBllNw/exec">
     <style>
-      html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0b0b0b;color:#fff}
-      .wrap{min-height:100%;display:grid;place-items:center;padding:24px;text-align:center}
-      a{color:#9fd3ff}
+      html, body { height:100%; margin:0; background:#0b0b0b; color:#fff; }
+      .wrap { height:100%; display:grid; grid-template-rows: 1fr auto; }
+      iframe { width:100%; height:100%; border:0; }
+      .fallback { padding:12px; text-align:center; background:#111; }
+      .btn { display:inline-block; margin-top:8px; padding:10px 14px; border-radius:12px; background:#1e293b; color:#fff; text-decoration:none; }
     </style>
   </head>
   <body>
     <div class="wrap">
-      <div>
-        <h1>Redirecting…</h1>
-        <p>If you’re not redirected automatically, <a href="https://script.google.com/macros/s/AKfycbz8tBy7YlFRRMZHqG6HjLNvhxGe7gX7rUpgKE8snCY0mhJZCoKpftqLhqDpjhLGEBllNw/exec">tap here</a>.</p>
+      <iframe
+        src="https://script.google.com/macros/s/AKfycbz8tBy7YlFRRMZHqG6HjLNvhxGe7gX7rUpgKE8snCY0mhJZCoKpftqLhqDpjhLGEBllNw/exec?authuser=0"
+        allow="clipboard-write; fullscreen"
+        referrerpolicy="no-referrer"
+        title="Find Your Animal"
+      ></iframe>
+      <div class="fallback">
+        If you’re not seeing the assignment, open it directly:
+        <br />
+        <a class="btn" target="_blank" rel="noopener"
+           href="https://script.google.com/macros/s/AKfycbz8tBy7YlFRRMZHqG6HjLNvhxGe7gX7rUpgKE8snCY0mhJZCoKpftqLhqDpjhLGEBllNw/exec?authuser=0">
+          Open full screen
+        </a>
       </div>
     </div>
   </body>
